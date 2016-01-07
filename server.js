@@ -2,12 +2,28 @@
 
 // // BASE SETUP
 // // =============================================================================
-var id = "";
-
-var getID = function(id)
-{
-       id = id;
-}
+var api = {
+    
+    AddCollection:function(nametoadd)
+    {
+        var nameValue = document.getElementById("nametoadd").value;
+        console.log(nameValue);
+    },
+    
+    FindCollection:function(nametofind)
+    {
+       var nameValue = document.getElementById("nametofind").value;
+       console.log("FindCollection");
+    },
+    
+    DeleteCollection:function(nametodelete)
+    {
+        var nameValue = document.getElementById("nametodelete").value;
+        console.log("DeleteCollection");
+    }
+    
+    
+};
 // // call the packages we need
 
 // var express = require('express')          // call express

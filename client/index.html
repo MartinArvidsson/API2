@@ -3,28 +3,28 @@
   <head>
     <title>API Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="server.js"></script>
+    <script type="text/javascript" src="../server.js"></script>
   </head>
   <body>
     <div id=CreateCollection>
       <h1>CREATE COLLECTION</h1>
-      <form action="">
-      <input type="text" name="ID"><br>
+      <form onsubmit=api.AddCollection(nametoadd)>
+      <input type="text" name="ID" id="nametoadd"><br>
       <input type="submit" value="Create">
     </form>
     </div>
     <div id=SearchCollection>
       <h1>SEARCH COLLECTION</h1>
-    <form action="">
-      <input type="text" name="ID"><br>
+    <form onsubmit=api.FindCollection(nametofind)>
+      <input type="text" name="ID" id="nametofind"><br>
       <input type="submit" value="Search">
     </form>
     </div>
     
     <div id=DeleteCollection>
       <h1>DELETE COLLECTION</h1>
-    <form action="">
-      <input type="text" name="ID"><br>
+    <form onsubmit=api.DeleteCollection(nametodelete)>
+      <input type="text" name="ID" id="nametodelete"><br>
       <input type="submit" value="Delete">
     </form>
     </div>
