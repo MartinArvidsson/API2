@@ -1,43 +1,30 @@
-// // server.js
+var fs = require("fs");
+var express = require("express");
+var app = express();
 
-// // BASE SETUP
-// // =============================================================================
-var api = {
+app.use(express.static("client"));
+
+ app.get('/', function (req, res) {
+    fs.readFile("index.html", function(req, res){
+        res.send(data.toString());
+    });
+ });
+ 
+ 
+app.post('/collection', function (req, res) {
     
-    AddCollection:function(nametoadd)
-    {
-        var nameValue = document.getElementById("nametoadd").value;
-        console.log(nameValue);
-    },
-    
-    FindCollection:function(nametofind)
-    {
-       var nameValue = document.getElementById("nametofind").value;
-       console.log("FindCollection");
-    },
-    
-    DeleteCollection:function(nametodelete)
-    {
-        var nameValue = document.getElementById("nametodelete").value;
-        console.log("DeleteCollection");
-    }
-    
-    
-};
-// // call the packages we need
+    console.log("hej");
+   //res.send('Added');
+});
 
-// var express = require('express')          // call express
-// var app = express();                      // define our app using express
-// var bodyParser = require('body-parser');
+// app.put('/index.html', function (req, res) {
+//   res.send('Update');
+// });
 
-// // configure app to use bodyParser()
-// // this will let us get the data from a POST
+// app.delete('/index.html', function (req, res) {
+//   res.send('Delete');
+// });
 
-// app.use(bodyParser.urlencoded({ extended: true}));
-// app.use(bodyParser.json());
-
-// var port = process.env.PORT || 8080;      // set our port
-
-// // ROUTES FOR OUR API
-// // =============================================================================
-// var router = express.Router();            // get an instance of the express Router
+app.listen(process.env.PORT || 8080, process.env.IP || "127.0.0.1", function () {
+    console.log('IT WORKS!');
+});

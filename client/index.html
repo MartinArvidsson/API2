@@ -3,20 +3,21 @@
   <head>
     <title>API Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="../server.js"></script>
+    <script type="text/javascript" src="/script.js"></script>
   </head>
   <body>
     <div id=CreateCollection>
-      <h1>CREATE COLLECTION</h1>
-      <form onsubmit=api.AddCollection(nametoadd)>
-      <input type="text" name="ID" id="nametoadd"><br>
+      <h1>Create collection</h1>
+      <form method="POST" id="postForm">
+      Namn:<input type="text" name="name" id="nametoadd"><br>
+      Collection att lägga i (ID)(Valfritt)<input type="text" name="parent" id="parent"/><br>
       <input type="submit" value="Create">
     </form>
     </div>
     <div id=SearchCollection>
       <h1>SEARCH COLLECTION</h1>
-    <form onsubmit=api.FindCollection(nametofind)>
-      <input type="text" name="ID" id="nametofind"><br>
+    <form method ="GET">
+      ID:<input type="text" name="ID" id="nametofind"><br>
       <input type="submit" value="Search">
     </form>
     </div>
@@ -24,7 +25,8 @@
     <div id=DeleteCollection>
       <h1>DELETE COLLECTION</h1>
     <form onsubmit=api.DeleteCollection(nametodelete)>
-      <input type="text" name="ID" id="nametodelete"><br>
+      Namn:<input type="text" name="name" id="nametoadd"><br>
+      Collection att lägga i (ID)(Valfritt)<input type="text" name="parent" id="parent"/><br>
       <input type="submit" value="Delete">
     </form>
     </div>
